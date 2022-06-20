@@ -1,4 +1,5 @@
 import React from "react";
+import nodeURL from "../../URL";
 import "./Register.css";
 
 class Register extends React.Component {
