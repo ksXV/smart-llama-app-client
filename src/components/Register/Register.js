@@ -24,7 +24,7 @@ class Register extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/register", {
+    fetch(`${nodeURL}/register`, {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -37,7 +37,7 @@ class Register extends React.Component {
       .then((data) => {
         if (data && data.success === "true") {
           this.saveAuthTokenInSessions(data.token);
-          fetch(`http://localhost:3000/profile/${data.userId}`, {
+          fetch(`${nodeURL}/profile/${data.userId}`, {
             method: "get",
             headers: {
               "Content-Type": "application/json",
